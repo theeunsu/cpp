@@ -6,7 +6,7 @@
 /*   By: eahn <eahn@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 15:46:16 by eahn              #+#    #+#             */
-/*   Updated: 2024/09/19 17:19:50 by eahn             ###   ########.fr       */
+/*   Updated: 2024/09/19 17:36:20 by eahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,40 @@ std::string getValidatedInput(const std::string &prompt)
 	}
 }
 
+// for (char c : input): available in C++11
+// for C++98: for(size_t i = 0; i < input.length(); i++)
+//     {if (!isdigit(input[i])) ...}
+std::string getValidatedPhoneNumber(const std::string &prompt)
+{
+	bool	isValid;
+
+	std::string input;
+	while (true)
+	{
+		std::cout << prompt;
+		std::getline(std::cin, input);
+		isValid = true;
+		for (char c : input)
+		{
+			if (!isdigit(c))
+			{
+				isValid = false;
+				break ;
+			}
+		}
+		if (isValid && !input.empty())
+			return (input);
+		else
+			std::cout << "Invalid phone number. Please try again." << std::endl;
+	}
+}
+
 void Contact::setContact()
 {
 	firstName = getValidatedInput("Enter the first name: ");
 	lastName = getValidatedInput("Enter the last name: ");
 	nickname = getValidatedInput("Enter the nickname: ");
-	phoneNumber = getValidatedInput("Enter the phone number: ");
+	phoneNumber = getValidatedPhoneNumber("Enter the phone number (digits only): ");
 	darkestSecret = getValidatedInput("Enter the darkest secret: ");
 }
 
