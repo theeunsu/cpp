@@ -6,12 +6,14 @@
 /*   By: eahn <eahn@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 15:46:10 by eahn              #+#    #+#             */
-/*   Updated: 2024/09/19 16:26:04 by eahn             ###   ########.fr       */
+/*   Updated: 2024/09/19 19:07:09 by eahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
+// Constructor initializes the oldest index and contact count
+// It should be implemented in the .cpp file (not in the header file)
 PhoneBook::PhoneBook()
 {
 	oldestIndex = 0;
@@ -32,6 +34,9 @@ void PhoneBook::addContact()
 	}
 }
 
+// .fail(): check state of the stream, returns true if an error occurred
+// .clear(): clear the error state of the stream
+// .ignore(): ignore the next n characters or until the delimiter
 void PhoneBook::searchContacts()
 {
 	int	index;
