@@ -6,12 +6,13 @@
 /*   By: eahn <eahn@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 15:46:16 by eahn              #+#    #+#             */
-/*   Updated: 2024/09/19 17:10:00 by eahn             ###   ########.fr       */
+/*   Updated: 2024/09/19 17:19:50 by eahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
+// &: a reference, like a pointer but refer to the original object
 std::string getValidatedInput(const std::string &prompt)
 {
 	std::string input;
