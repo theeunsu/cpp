@@ -6,11 +6,11 @@
 /*   By: eahn <eahn@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 22:47:07 by eahn              #+#    #+#             */
-/*   Updated: 2024/09/17 23:28:08 by eahn             ###   ########.fr       */
+/*   Updated: 2024/09/20 13:59:53 by eahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <cctype>
+#include <cctype> // toupper
 #include <iostream>
 
 int	main(int ac, char **av)
