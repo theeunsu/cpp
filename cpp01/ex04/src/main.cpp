@@ -6,7 +6,7 @@
 /*   By: eahn <eahn@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 14:43:56 by eahn              #+#    #+#             */
-/*   Updated: 2024/11/08 23:44:01 by eahn             ###   ########.fr       */
+/*   Updated: 2024/11/11 15:18:31 by eahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <iostream> // std::cout
 #include <string>   // std::string
 
-void	replacer(std::ifstream &inputFile, std::ofstream &outputFile,
+void	replace(std::ifstream &inputFile, std::ofstream &outputFile,
 		const std::string &s1, const std::string &s2)
 {
 	size_t	pos;
@@ -69,7 +69,7 @@ int	main(int ac, char **av)
 		inputFile.close();
 		return (1);
 	}
-	replacer(inputFile, outputFile, s1, s2);
+	replace(inputFile, outputFile, s1, s2);
 	inputFile.close();
 	outputFile.close();
 	return (0);

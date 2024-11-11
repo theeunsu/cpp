@@ -6,7 +6,7 @@
 /*   By: eahn <eahn@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 15:12:50 by eahn              #+#    #+#             */
-/*   Updated: 2024/11/06 18:08:28 by eahn             ###   ########.fr       */
+/*   Updated: 2024/11/11 14:53:51 by eahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int main()
 	{
 		Weapon club = Weapon("crude spiked club");
 		HumanB jim("Jim");
+		jim.attack();
 		jim.setWeapon(club);
 		jim.attack();
 		club.setType("some other type of club");
@@ -33,3 +34,8 @@ int main()
 	}
 	return 0;
 }
+
+// explicit destructors aren't necessary in this case because:
+// 1. the Weapon class doesn't allocate dynamic memory
+// 2. No external resources are used in the classes
+// 3. The compiler-generated destructor will do the right thing

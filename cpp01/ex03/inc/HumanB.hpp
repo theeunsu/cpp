@@ -6,7 +6,7 @@
 /*   By: eahn <eahn@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 16:47:17 by eahn              #+#    #+#             */
-/*   Updated: 2024/11/06 17:38:40 by eahn             ###   ########.fr       */
+/*   Updated: 2024/11/11 14:46:40 by eahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class HumanB
 {
     private:
         std::string name;
-        Weapon *weapon;
+        Weapon *weapon; // weapon as pointer
 
     public: 
         HumanB(const std::string& name);

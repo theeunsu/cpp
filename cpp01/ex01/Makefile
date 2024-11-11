@@ -6,14 +6,14 @@
 #    By: eahn <eahn@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/06 12:37:40 by eahn              #+#    #+#              #
-#    Updated: 2024/11/06 13:09:38 by eahn             ###   ########.fr        #
+#    Updated: 2024/11/11 14:23:44 by eahn             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++17
 
-NAME = zombie
+NAME = zombieHorde
 
 SRC_DIR = ./src/
 INC_DIR = ./inc/
