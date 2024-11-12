@@ -6,7 +6,7 @@
 /*   By: eahn <eahn@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:39:38 by eahn              #+#    #+#             */
-/*   Updated: 2024/11/12 23:58:05 by eahn             ###   ########.fr       */
+/*   Updated: 2024/11/13 00:06:50 by eahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ float Fixed::toFloat(void) const
 // 1 << fractionalBits is equivalent to 2^fractionalBits (2^8 = 256)
 // example: if value is 1280, 1280 / 256 = 5.0
 
+// overload << operator to print Fixed object (float)
 std::ostream &operator<<(std::ostream &os, const Fixed &fixed)
 {
 	os << fixed.toFloat();
