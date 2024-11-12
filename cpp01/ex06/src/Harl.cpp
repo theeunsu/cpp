@@ -6,7 +6,7 @@
 /*   By: eahn <eahn@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 21:39:44 by eahn              #+#    #+#             */
-/*   Updated: 2024/11/11 15:33:21 by eahn             ###   ########.fr       */
+/*   Updated: 2024/11/12 17:35:00 by eahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ void Harl::error()
 	std::cout << "[Error]\nThis is unacceptable! I want to speak to the manager now.\n" << std::endl;
 }
 
-// complain function using pointer to member function
 void Harl::complain(const std::string &level)
 {
-	const std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	int	index = -1;
+	int	index;
 
+	const std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	index = -1;
 	for (int i = 0; i < 4; i++)
 	{
 		if (levels[i] == level)
@@ -46,7 +46,6 @@ void Harl::complain(const std::string &level)
 			break ;
 		}
 	}
-
 	switch (index)
 	{
 	case 0:
