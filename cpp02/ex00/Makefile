@@ -6,12 +6,12 @@
 #    By: eahn <eahn@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/12 17:38:35 by eahn              #+#    #+#              #
-#    Updated: 2024/11/12 23:16:44 by eahn             ###   ########.fr        #
+#    Updated: 2024/11/15 00:19:11 by eahn             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -fno-elide-constructors
+CFLAGS = -Wall -Wextra -Werror -std=c++17
 
 NAME = fixed
 
@@ -32,15 +32,15 @@ $(OBJ_DIR):
 $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp | $(OBJ_DIR)
 	$(CC) $(CFLAGS) -I$(INC_DIR) -c $< -o $@
 
-$(NAME): $(OBJS)
-	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+$(NAME): $(OBJ_DIR) $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	@rm -f $(OBJS)
-	@rm -rf $(OBJ_DIR)
 
 fclean: clean
 	@rm -f $(NAME)
+	@rm -rf $(OBJ_DIR)
 
 re: fclean all
 

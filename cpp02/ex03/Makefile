@@ -6,14 +6,14 @@
 #    By: eahn <eahn@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/12 17:38:35 by eahn              #+#    #+#              #
-#    Updated: 2024/11/14 23:33:18 by eahn             ###   ########.fr        #
+#    Updated: 2024/11/15 00:14:50 by eahn             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++17
 
-NAME = fixed
+NAME = bsp
 
 SRC_DIR = ./src/
 INC_DIR = ./inc/

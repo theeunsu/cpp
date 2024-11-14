@@ -6,7 +6,7 @@
 /*   By: eahn <eahn@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:39:38 by eahn              #+#    #+#             */
-/*   Updated: 2024/11/13 00:06:50 by eahn             ###   ########.fr       */
+/*   Updated: 2024/11/15 00:37:38 by eahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Fixed::Fixed(const int intValue)
 	std::cout << "Int constructor called" << std::endl;
 	value = intValue << fractionalBits;
 }
-// example: 5 << 8 = 1280
+// example: 5 << 8 (5 * 256)= 1280
 // The value 1280 is translated to 5.0 in fixed point
 
 // convert float to fixed point
@@ -32,8 +32,8 @@ Fixed::Fixed(const float floatValue)
 	std::cout << "Float constructor called" << std::endl;
 	value = roundf(floatValue * (1 << fractionalBits));
 }
-// example: 5.25 * 256 = 1344
-// Using roundf rounds the decimal ppint to reduce error
+// example: 5.25 * 256 = 1344.0 -> 1344
+// Using roundf rounds the decimal point to reduce error
 
 Fixed::Fixed(const Fixed &other) : value(other.value)
 {
