@@ -6,7 +6,7 @@
 /*   By: eahn <eahn@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:39:38 by eahn              #+#    #+#             */
-/*   Updated: 2024/11/13 17:49:03 by eahn             ###   ########.fr       */
+/*   Updated: 2024/11/14 18:01:46 by eahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,59 +75,63 @@ float Fixed::toFloat(void) const
 	return ((float)value / (1 << fractionalBits));
 }
 
+std::ostream &operator<<(std::ostream &os, const Fixed &fixed)
+{
+	os << fixed.toFloat();
+	return (os);
+}
 
 // comparison operators overloading (>, <, >=, <=, ==, !=)
 bool Fixed::operator>(const Fixed &other) const
 {
-	return this->value > other.value;
+	return (this->value > other.value);
 }
 
 bool Fixed::operator<(const Fixed &other) const
 {
-	return this->value < other.value;
+	return (this->value < other.value);
 }
 
 bool Fixed::operator>=(const Fixed &other) const
 {
-	return this->value >= other.value;
+	return (this->value >= other.value);
 }
 
 bool Fixed::operator<=(const Fixed &other) const
 {
-	return this->value <= other.value;
+	return (this->value <= other.value);
 }
 
 bool Fixed::operator==(const Fixed &other) const
 {
-	return this->value == other.value;
+	return (this->value == other.value);
 }
 
 bool Fixed::operator!=(const Fixed &other) const
 {
-	return this->value != other.value;
+	return (this->value != other.value);
 }
 
-
-//arithmetic operators overloading (+, -, *, /)
+// arithmetic operators overloading (+, -, *, /)
 Fixed Fixed::operator+(const Fixed &other) const
 {
 	Fixed result;
 	result.value = this->value + other.value;
-	return result;
+	return (result);
 }
 
 Fixed Fixed::operator-(const Fixed &other) const
 {
 	Fixed result;
 	result.value = this->value - other.value;
-	return result;
+	return (result);
 }
 
 Fixed Fixed::operator*(const Fixed &other) const
 {
 	Fixed result;
 	result.value = (this->value * other.value) >> fractionalBits;
-	return result;
+	return (result);
 }
 
 Fixed Fixed::operator/(const Fixed &other) const
@@ -135,12 +139,38 @@ Fixed Fixed::operator/(const Fixed &other) const
 	if (other.value == 0)
 	{
 		std::cerr << "Error: Division by zero" << std::endl;
-		return Fixed();
+		return (Fixed());
 	}
 	Fixed result;
 	result.value = (this->value << fractionalBits) / other.value;
-	return result;
+	return (result);
 }
 
-
 // Increment/decrement operators overloading (++, --) TBD
+Fixed &Fixed::operator++()
+{
+	++value;
+	return (*this);
+}
+
+Fixed Fixed::operator++(int)
+{
+	Fixed	tmp;
+
+	tmp = *this;
+	++value;
+	return (tmp);
+}
+
+Fixed &Fixed::operator--()
+{
+	--value;
+	return (*this);
+}
+
+Fixed Fixed::operator--(int)
+{
+	Fixed tmp = *this;
+	--value;
+	return (tmp);
+}
