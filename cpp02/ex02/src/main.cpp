@@ -6,7 +6,7 @@
 /*   By: eahn <eahn@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:39:40 by eahn              #+#    #+#             */
-/*   Updated: 2024/11/14 18:35:05 by eahn             ###   ########.fr       */
+/*   Updated: 2024/11/15 10:04:45 by eahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,55 +17,82 @@
 고정 소수점 → 실수 변환: 고정 소수점 ÷ (1 << fractionalBits)
 */
 
-// int	main(void)
-// {
+// #include <iomanip> // std::setprecision
+// int main() {
+//     // Default constructor test
+//     Fixed a;
+//     std::cout << "Default constructor test: " << a << std::endl;
 
-// 	// // comparison operators
-// 	// std::cout << "a > b: " << (a > b) << std::endl;
-// 	// std::cout << "a < b: " << (a < b) << std::endl;
-// 	// std::cout << "a >= b: " << (a >= b) << std::endl;
-// 	// std::cout << "a <= b: " << (a <= b) << std::endl;
-// 	// std::cout << "a == b: " << (a == b) << std::endl;
-// 	// std::cout << "a != b: " << (a != b) << std::endl;
+//     // Int constructor test
+//     Fixed b(10);
+//     std::cout << "Int constructor test: " << b << std::endl;
 
-// 	// // arithmetic operations
-// 	// Fixed	c;
-// 	// c = a + b;
-// 	// std::cout << "a + b = " << c << std::endl;
-// 	// c = a - b;
-// 	// std::cout << "a - b = " << c << std::endl;
-// 	// c = a * b;
-// 	// std::cout << "a * b = " << c << std::endl;
-// 	// c = a / b;
-// 	// std::cout << "a / b = " << c << std::endl;
+//     // Float constructor test
+//     Fixed c(42.42f);
+//     std::cout << "Float constructor test: " << c << std::endl;
 
-// 	// increment and decrement operations
+//     // Copy constructor test
+//     Fixed d(b);
+//     std::cout << "Copy constructor test: " << d << std::endl;
 
-// 	// Fixed d(1.5f);
+//     // Copy assignment operator test
+//     a = Fixed(1234.0f);
+//     std::cout << "Copy assignment operator test: " << a << std::endl;
 
-// 	// std::cout << d++ << std::endl; // 출력: 1.5 (증가 전 값)
-// 	// std::cout << d << std::endl;   // 출력: 1.50391 (증가 후 값)
+//     // Comparison operators test
+//     Fixed e(10.5f);
+//     Fixed f(5.25f);
+//     std::cout << "Comparison operators test:" << std::endl;
+//     std::cout << "e > f: " << (e > f) << std::endl;
+//     std::cout << "e < f: " << (e < f) << std::endl;
+//     std::cout << "e >= f: " << (e >= f) << std::endl;
+//     std::cout << "e <= f: " << (e <= f) << std::endl;
+//     std::cout << "e == f: " << (e == f) << std::endl;
+//     std::cout << "e != f: " << (e != f) << std::endl;
 
-// 	// std::cout << ++d << std::endl; // 출력: 1.50781 (증가 후 값)
+//     // Arithmetic operators test
+//     Fixed g = e + f;
+//     Fixed h = e - f;
+//     Fixed i = e * f;
+//     Fixed j = e / f;
+//     std::cout << "Arithmetic operators test:" << std::endl;
+//     std::cout << "e + f: " << g << std::endl;
+// 	std::cout << "e - f: " << h << std::endl;
+//     std::cout << "e * f: " << i << std::endl;
+//     if (f != Fixed(0)) { // Check for division by zero
+//         std::cout << "e / f: " << j << std::endl;
+//     } else {
+//         std::cout << "e / f: Division by zero error" << std::endl;
+//     }
 
-// 	// std::cout << d-- << std::endl; // 출력: 1.50781 (감소 전 값)
-// 	// std::cout << d << std::endl;   // 출력: 1.50391 (감소 후 값)
+//     // Increment and decrement operators test
+//     std::cout << "Increment and decrement operators test:" << std::endl;
+// 	std::cout << std::fixed << std::setprecision(8); // 소수점 이하 8자리까지 출력
+//     std::cout << "Initial a: " << a << std::endl;
 
-// 	// Min Max operations
-// 	Fixed a(5.25f);
-// 	Fixed b(10.5f);
-// 	std::cout << "Min: " << Fixed::min(a, b) << std::endl; // 최소값 출력
-//     std::cout << "Max: " << Fixed::max(a, b) << std::endl; // 최대값 출력
+//     std::cout << "After ++a: " << ++a << std::endl; // 전위 증가
+//     std::cout << "After a++: " << a++ << std::endl; // 후위 증가
+//     std::cout << "a after a++: " << a << std::endl;
 
-// 	const Fixed e(30.75f);
-// 	const Fixed f(5.1f);
+//     std::cout << "After --a: " << --a << std::endl; // 전위 감소
+//     std::cout << "After a--: " << a-- << std::endl; // 후위 감소
+//     std::cout << "a after a--: " << a << std::endl;
 
-// 	std::cout << "Const Min: " << Fixed::min(e, f) << std::endl; // 상수 객체 최소값
-//     std::cout << "Const Max: " << Fixed::max(e, f) << std::endl; // 상수 객체 최대값
+//     std::cout << "Raw value: " << a.getRawBits() << std::endl; // Raw Value 출력
 
-// 	return (0);
+//     // Min and max functions test
+//     Fixed const x(5.05f);
+//     Fixed const y(2.02f);
+//     std::cout << "Min and max functions test:" << std::endl;
+//     std::cout << "Min of x and y: " << Fixed::min(x, y) << std::endl;
+//     std::cout << "Max of x and y: " << Fixed::max(x, y) << std::endl;
+
+//     Fixed z(3.33f);
+//     std::cout << "Min of e and z: " << Fixed::min(e, z) << std::endl;
+//     std::cout << "Max of e and z: " << Fixed::max(e, z) << std::endl;
+
+//     return 0;
 // }
-
 
 int main( void ) {
 Fixed a;
