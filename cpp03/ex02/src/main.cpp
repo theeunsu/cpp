@@ -6,47 +6,36 @@
 /*   By: eahn <eahn@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 00:33:53 by eahn              #+#    #+#             */
-/*   Updated: 2024/11/19 17:15:28 by eahn             ###   ########.fr       */
+/*   Updated: 2024/11/19 22:07:30 by eahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ClapTrap.hpp"
+#include "../inc/FragTrap.hpp"
 
 int main()
 {
-	ClapTrap clap1("Lulu");
-	ClapTrap clap2("Mimi");
+	// Create FragTrap object
+	std::cout << "--- Creating FragTrap Fofo ---" << std::endl;
+	FragTrap fofo("Fofo");
 
-	// initial stattes
-	std::cout << "\n--- Initial States ---" << std::endl;
-	clap1.attack("Mimi");
-	clap2.takeDamage(5);
+	// Test inherited attack function
+	std::cout << "\n--- Testing attack ---" << std::endl;
+	fofo.attack("Enemy"); // ClapTrap Fofo attack
 
-	// repair test
-	std::cout << "\n--- Repair Test ---" << std::endl;
-	clap1.beRepaired(3);
+	// Test highFivesGuys function
+	std::cout << "\n--- Testing highFivesGuys ---" << std::endl;
+	fofo.highFivesGuys(); // FragTrap function
 
-	// energy depletion test
-	std::cout << "\n--- Energy Depletion Test ---" << std::endl;
-	for (int i = 0; i < 11 ; i++)
-		clap1.attack("Mimi");
+	// Test copy constructor
+	std::cout << "\n--- Testing copy constructor ---" << std::endl;
+	FragTrap fofoCopy(fofo);
 
-	// hit points depletion test
-	std::cout << "\n--- Hit Points Depletion Test ---" << std::endl;
-	clap2.takeDamage(50); // deplete hit points of clap2
-	clap2.beRepaired(10); // try to repair after hit points are depleted
+	// Test assignment operator
+	std::cout << "\n--- Testing assignment operator ---" << std::endl;
+	FragTrap anotherFofo;
+	anotherFofo = fofo;
 
-	// copy constructor test
-	std::cout << "\n--- Copy Constructor Test ---" << std::endl;
-	ClapTrap clap3(clap1);
-	clap3.attack("Mimi");
-
-	// assignment operator test
-	std::cout << "\n--- Assignment Operator Test ---" << std::endl;
-	ClapTrap clap4;
-	clap4 = clap2;
-	clap4.attack("Lulu");
-
+	// Destructors
 	std::cout << "\n--- Destructors ---" << std::endl;
 
 	return 0;

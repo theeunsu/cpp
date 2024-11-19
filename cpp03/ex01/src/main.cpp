@@ -6,47 +6,42 @@
 /*   By: eahn <eahn@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 00:33:53 by eahn              #+#    #+#             */
-/*   Updated: 2024/11/19 17:15:28 by eahn             ###   ########.fr       */
+/*   Updated: 2024/11/19 17:17:53 by eahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ClapTrap.hpp"
+#include "../inc/ScavTrap.hpp"
 
 int main()
 {
-	ClapTrap clap1("Lulu");
-	ClapTrap clap2("Mimi");
+	// Create ScavTrap object
+	std::cout << "--- Creating ScavTrap Coco ---" << std::endl;
+	ScavTrap coco("Coco");
 
-	// initial stattes
-	std::cout << "\n--- Initial States ---" << std::endl;
-	clap1.attack("Mimi");
-	clap2.takeDamage(5);
+	// Test attack function
+	std::cout << "\n--- Testing attack ---" << std::endl;
+	coco.attack("Enemy");
 
-	// repair test
-	std::cout << "\n--- Repair Test ---" << std::endl;
-	clap1.beRepaired(3);
+	// Test guardGate function
+	std::cout << "\n--- Testing guardGate ---" << std::endl;
+	coco.guardGate();
 
-	// energy depletion test
-	std::cout << "\n--- Energy Depletion Test ---" << std::endl;
-	for (int i = 0; i < 11 ; i++)
-		clap1.attack("Mimi");
+	// Test copy constructor
+	std::cout << "\n--- Testing copy constructor ---" << std::endl;
+	ScavTrap cocoCopy(coco);
 
-	// hit points depletion test
-	std::cout << "\n--- Hit Points Depletion Test ---" << std::endl;
-	clap2.takeDamage(50); // deplete hit points of clap2
-	clap2.beRepaired(10); // try to repair after hit points are depleted
+	// Test assignment operator
+	std::cout << "\n--- Testing assignment operator ---" << std::endl;
+	ScavTrap anotherScav;
+	anotherScav = coco;
 
-	// copy constructor test
-	std::cout << "\n--- Copy Constructor Test ---" << std::endl;
-	ClapTrap clap3(clap1);
-	clap3.attack("Mimi");
+	// Test attack with no energy
+	// std::cout << "\n--- Testing attack with no energy ---" << std::endl;
+	// for (int i = 0; i < 51; i++)
+	// 	coco.attack("Enemy"); // drain all energy points
 
-	// assignment operator test
-	std::cout << "\n--- Assignment Operator Test ---" << std::endl;
-	ClapTrap clap4;
-	clap4 = clap2;
-	clap4.attack("Lulu");
-
+	// Test destruction
 	std::cout << "\n--- Destructors ---" << std::endl;
 
 	return 0;
