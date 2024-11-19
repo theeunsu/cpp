@@ -6,7 +6,7 @@
 /*   By: eahn <eahn@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 00:33:53 by eahn              #+#    #+#             */
-/*   Updated: 2024/11/19 22:36:04 by eahn             ###   ########.fr       */
+/*   Updated: 2024/11/19 22:47:03 by eahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,7 @@ int main()
 	return 0;
 }
 
-/**
- * 
-[Destructor] ClapTrap Mimi has been destroyed.  // clap4
-[Destructor] ClapTrap Lulu has been destroyed.  // clap3
-[Destructor] ClapTrap Mimi has been destroyed.  // clap2
-[Destructor] ClapTrap Lulu has been destroyed.  // clap1
- */
+// virtual inheritance is used to avoid diamond problem
+// ScavTrap and FragTrap should be changed to virtual inheritance from ClapTrap
+// if not virtual, DiamondTrap would have multiple instances of ClapTrap
+// With virtual, DiamondTrap calls ClapTrap constructor only once within DiamondTrap constructor

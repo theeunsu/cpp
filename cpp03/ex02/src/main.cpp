@@ -6,7 +6,7 @@
 /*   By: eahn <eahn@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 00:33:53 by eahn              #+#    #+#             */
-/*   Updated: 2024/11/19 22:07:30 by eahn             ###   ########.fr       */
+/*   Updated: 2024/11/19 22:42:51 by eahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,3 @@ int main()
 
 	return 0;
 }
-
-/**
- * 
-[Destructor] ClapTrap Mimi has been destroyed.  // clap4
-[Destructor] ClapTrap Lulu has been destroyed.  // clap3
-[Destructor] ClapTrap Mimi has been destroyed.  // clap2
-[Destructor] ClapTrap Lulu has been destroyed.  // clap1
- */
