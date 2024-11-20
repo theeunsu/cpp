@@ -6,7 +6,7 @@
 /*   By: eahn <eahn@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 23:16:01 by eahn              #+#    #+#             */
-/*   Updated: 2024/11/20 12:46:13 by eahn             ###   ########.fr       */
+/*   Updated: 2024/11/20 12:56:51 by eahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,3 +39,10 @@ class ClapTrap
 };
 
 #endif
+
+
+// example when using virtual destructor
+// ClapTrap* obj = new ScavTrap("Hero");
+// delete obj; 
+// when delete obj called, it identifies the actual type of obj being pointed to (ScavTrap)
+// and calls destructor of ScavTrap first, and then calls destructor of ClapTrap
