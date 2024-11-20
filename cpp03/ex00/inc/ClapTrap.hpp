@@ -6,7 +6,7 @@
 /*   By: eahn <eahn@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 23:16:01 by eahn              #+#    #+#             */
-/*   Updated: 2024/11/19 00:54:22 by eahn             ###   ########.fr       */
+/*   Updated: 2024/11/20 12:46:20 by eahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ class ClapTrap
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
-		
-		// unsigned int getEnergyPoints() const;
 };
 
 #endif
