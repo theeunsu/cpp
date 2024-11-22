@@ -6,32 +6,29 @@
 #    By: eahn <eahn@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/12 17:38:35 by eahn              #+#    #+#              #
-#    Updated: 2024/11/19 22:05:14 by eahn             ###   ########.fr        #
+#    Updated: 2024/11/22 22:59:23 by eahn             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++17
 
-NAME = ex03
+NAME = ex00
 
 SRC_DIR = ./src/
 INC_DIR = ./inc/
 OBJ_DIR = ./obj/
 
-SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
+SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 
 NEW_SRCS = $(addprefix $(SRC_DIR), $(SRCS))
 OBJS = $(addprefix $(OBJ_DIR), $(SRCS:.cpp=.o))
 
-# 최종 바이너리 생성
 all: $(NAME)
 
-# OBJ_DIR 생성 규칙
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
 
-# .o 파일 생성 규칙
 $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp | $(OBJ_DIR)
 	$(CC) $(CFLAGS) -I$(INC_DIR) -c $< -o $@
 
