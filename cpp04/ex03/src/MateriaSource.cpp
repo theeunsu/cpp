@@ -6,7 +6,7 @@
 /*   By: eahn <eahn@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 22:52:33 by eahn              #+#    #+#             */
-/*   Updated: 2024/11/24 22:55:45 by eahn             ###   ########.fr       */
+/*   Updated: 2024/11/24 23:25:57 by eahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void MateriaSource::learnMateria(AMateria* m)
 		if (!templates[i]) // If templates[i] is nullptr
 		{
 			templates[i] = m->clone(); // Copy Materia and store it in templates[i]
+			std::cout << "MateriaSource: Learned materia of type " << m->getType() << " at slot " << i << std::endl;
 			return;
 		}
 	}
