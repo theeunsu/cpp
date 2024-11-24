@@ -6,7 +6,7 @@
 /*   By: eahn <eahn@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 22:12:41 by eahn              #+#    #+#             */
-/*   Updated: 2024/11/24 20:01:10 by eahn             ###   ########.fr       */
+/*   Updated: 2024/11/24 20:53:58 by eahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ Dog& Dog::operator=(const Dog& other)
 
 Dog::~Dog()
 {
-	delete brain; // delete dynamically allocated Brain object
 	std::cout <<"[Dog] Destructor called" << std::endl;
+	delete brain; // delete dynamically allocated Brain object
 }
 
 void Dog::makeSound() const

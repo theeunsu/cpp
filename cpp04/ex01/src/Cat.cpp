@@ -6,7 +6,7 @@
 /*   By: eahn <eahn@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 22:35:48 by eahn              #+#    #+#             */
-/*   Updated: 2024/11/24 20:03:01 by eahn             ###   ########.fr       */
+/*   Updated: 2024/11/24 20:54:01 by eahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ Cat& Cat::operator=(const Cat& other)
 
 Cat::~Cat()
 {
-	delete brain; // delete dynamically allocated Brain object
 	std::cout <<"[Cat] Destructor called" << std::endl;
+	delete brain; // delete dynamically allocated Brain object
 }
 
 void Cat::makeSound() const
